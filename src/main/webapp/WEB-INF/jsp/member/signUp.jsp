@@ -32,7 +32,7 @@
 				}
 			},
 			error: function(req, status, errThrown) {
-				alert("서버가 원활하지 않습니다.");
+				alert("아이디를 입력해주세요.");
 			}
 		});
 	}
@@ -77,9 +77,30 @@
 		}
 	}
 	
-	function CheckCompanyNo() {
-		
-	}
+	function checkPassword(id,password){
+
+		if(!/^[a-zA-Z0-9]{10,15}$/.test(password)){
+		alert('숫자와 영문자 조합으로 10~15자리를 사용해야 합니다.');
+		return false;
+		}
+
+		var checkNumber = password.search(/[0-9]/g);
+		var checkEnglish = password.search(/[a-z]/ig);
+
+		if(checkNumber <0 || checkEnglish <0){
+		alert("숫자와 영문자를 혼용하여야 합니다.");
+		return false;
+		}
+		if(/(\w)\1\1\1/.test(password)){
+		alert('연속되는 문자를 4번 이상 사용하실 수 없습니다.');
+		return false;
+		}
+		if(password.search(id) > -1){
+		alert("비밀번호에 아이디가 포함되었습니다.");
+		return false;
+		}
+		return true;
+		}
 </script>
 <body>
     <div class="container">
@@ -99,11 +120,11 @@
                             	</div>
                             	<div class="form-group">
                             		<label>비밀번호</label>
-                            		<input class="form-control" placeholder="비밀번호" name="signUpUserPwd" id="signUpUserPwd" type="password" />
+                            		<input class="form-control" placeholder="비밀번호" name="signUpUserPwd" id="signUpUserPwd" type="password" onclick="checkPassword();"/>
                             	</div>
                             	<div class="form-group">
                             		<label>비밀번호 확인</label>
-                            		<input class="form-control" placeholder="비밀번호 확인" name="signUpUserPwdCfm" id="signUpUserPwdCfm" type="password" />
+                            		<input class="form-control" placeholder="비밀번호 확인" name="signUpUserPwdCfm" id="signUpUserPwdCfm" type="password" onclick="execPostCode();" />
                             	</div>
                             	<div class="form-group">
                             		<label>회사명</label>
