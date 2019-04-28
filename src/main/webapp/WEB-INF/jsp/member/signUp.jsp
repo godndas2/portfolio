@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <%@include file="../include/head.jsp" %>
 
@@ -45,7 +44,6 @@
 		var inputCpnName = $("#signUpUserCompanyName").val();
 		var inputCpnTelNo = $("#signUpUserTelNo").val();
 		var inputCpnEmail = $("#signUpUserEmail").val();
-// 		var inputCpnNo = $("#signUpUserCompanyNo").val();
 		var inputCpnAddr1 = $("#signUpUserPostNo").val();
 		var inputCpnAddr2 = $("#signUpUserCompanyAddress").val();
 		var inputCpnAddr3 = $("#signUpUserCompanyAddressDetail").val();
@@ -61,8 +59,6 @@
 		if(inputCpnTelNo.length == 0) { alert("전화번호를 입력해 주세요."); $("#signUpUserTelNo").focus(); return; }
 		
 		if(inputCpnEmail.length == 0) { alert("이메일을 입력해 주세요."); $("#signUpUserEmail").focus(); return; }
-		
-// 		if(inputCpnNo.length == 0) { alert("사업자번호를 입력해 주세요."); $("#signUpUserCompanyNo").focus(); return; }
 		
 		if(inputCpnAddr1.length == 0 || inputCpnAddr2.length == 0 || inputCpnAddr3.length == 0) { 
 			alert("주소를 입력해 주세요."); $("#signUpUserCompanyAddressDetail").focus();  return;
@@ -138,10 +134,6 @@
                             		<label>이메일</label>
                             		<input class="form-control" placeholder="이메일" name="signUpUserEmail" id="signUpUserEmail" type="text" />
                             	</div>
-<!--                             	<div class="form-group"> -->
-<!--                             		<label>사업자번호</label> -->
-<!--                             		<input class="form-control" placeholder="사업자번호" name="signUpUserCompanyNo" id="signUpUserCompanyNo" type="text" /> -->
-<!--                             	</div> -->
                             	<div class="form-group">
                             		<label style="display: block;" >회사주소</label>
                             		<input class="form-control" style="width: 40%; display: inline;" placeholder="우편번호" name="signUpUserPostNo" id="signUpUserPostNo" type="text" readonly="readonly" >
@@ -154,7 +146,6 @@
                             	<div class="form-group">
                             		<input class="form-control" placeholder="상세주소" name="signUpUserCompanyAddressDetail" id="signUpUserCompanyAddressDetail" type="text"  />
                             	</div>
-<!--                             	<button class="btn btn-lg btn-success btn-block">회원가입</button> -->
                             	<input type="button" value="회원가입" onclick="dosignUp();" />
                             </fieldset>
                         </form>
