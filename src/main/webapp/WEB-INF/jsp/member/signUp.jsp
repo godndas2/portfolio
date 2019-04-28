@@ -45,7 +45,7 @@
 		var inputCpnName = $("#signUpUserCompanyName").val();
 		var inputCpnTelNo = $("#signUpUserTelNo").val();
 		var inputCpnEmail = $("#signUpUserEmail").val();
-		var inputCpnNo = $("#signUpUserCompanyNo").val();
+// 		var inputCpnNo = $("#signUpUserCompanyNo").val();
 		var inputCpnAddr1 = $("#signUpUserPostNo").val();
 		var inputCpnAddr2 = $("#signUpUserCompanyAddress").val();
 		var inputCpnAddr3 = $("#signUpUserCompanyAddressDetail").val();
@@ -62,7 +62,7 @@
 		
 		if(inputCpnEmail.length == 0) { alert("이메일을 입력해 주세요."); $("#signUpUserEmail").focus(); return; }
 		
-		if(inputCpnNo.length == 0) { alert("사업자번호를 입력해 주세요."); $("#signUpUserCompanyNo").focus(); return; }
+// 		if(inputCpnNo.length == 0) { alert("사업자번호를 입력해 주세요."); $("#signUpUserCompanyNo").focus(); return; }
 		
 		if(inputCpnAddr1.length == 0 || inputCpnAddr2.length == 0 || inputCpnAddr3.length == 0) { 
 			alert("주소를 입력해 주세요."); $("#signUpUserCompanyAddressDetail").focus();  return;
@@ -117,10 +117,10 @@
                             		<label>이메일</label>
                             		<input class="form-control" placeholder="이메일" name="signUpUserEmail" id="signUpUserEmail" type="text" />
                             	</div>
-                            	<div class="form-group">
-                            		<label>사업자번호</label>
-                            		<input class="form-control" placeholder="사업자번호" name="signUpUserCompanyNo" id="signUpUserCompanyNo" type="text" />
-                            	</div>
+<!--                             	<div class="form-group"> -->
+<!--                             		<label>사업자번호</label> -->
+<!--                             		<input class="form-control" placeholder="사업자번호" name="signUpUserCompanyNo" id="signUpUserCompanyNo" type="text" /> -->
+<!--                             	</div> -->
                             	<div class="form-group">
                             		<label style="display: block;" >회사주소</label>
                             		<input class="form-control" style="width: 40%; display: inline;" placeholder="우편번호" name="signUpUserPostNo" id="signUpUserPostNo" type="text" readonly="readonly" >
