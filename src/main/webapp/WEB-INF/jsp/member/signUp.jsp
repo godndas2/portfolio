@@ -124,7 +124,7 @@
                             	</div>
                             	<div class="form-group">
                             		<label>비밀번호 확인</label>
-                            		<input class="form-control" placeholder="비밀번호 확인" name="signUpUserPwdCfm" id="signUpUserPwdCfm" type="password" onclick="execPostCode();" />
+                            		<input class="form-control" placeholder="비밀번호 확인" name="signUpUserPwdCfm" id="signUpUserPwdCfm" type="password" />
                             	</div>
                             	<div class="form-group">
                             		<label>회사명</label>
