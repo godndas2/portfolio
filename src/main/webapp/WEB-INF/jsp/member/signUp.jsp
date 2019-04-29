@@ -79,7 +79,7 @@
 		alert('숫자와 영문자 조합으로 10~15자리를 사용해야 합니다.');
 		return false;
 		}
-
+ 
 		var checkNumber = password.search(/[0-9]/g);
 		var checkEnglish = password.search(/[a-z]/ig);
 
