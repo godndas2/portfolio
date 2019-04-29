@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="board">
+	
+	<select id="boardList" resultType="com.halfdev.study.board.vo.BoardVO">
+            SELECT
+                 nno,
+                 ntitle,
+                 ncontent,
+                 nwriter,
+                 nrdate,
+                 nviewcnt,
+                 nisdelete
+             FROM tbl_notice
+    </select>
+    
+    <insert id="boardInsert">
+            INSERT INTO tbl_notice(
+            	nno,
+                ntitle,
+                ncontent,
+                nwriter,
+                nrdate
+            )VALUES(
+            	SQ_NNO.nextval,
+                #{ntitle},
+                #{ncontent},
+                #{nwriter},
+                sysdate
+            )
+	</insert>
+</mapper>
