@@ -4,9 +4,10 @@
 <%@include file="../include/head.jsp" %>
 
 <script type="text/javascript">
-	var isCheckId = 0;
+	var isCheckId = 0; // fasle
 	function duplicationId () {
 		var inputId = $("#signUpUserId").val();
+		
 		$.ajax({
 			async: false,
 			type: "post",
@@ -20,7 +21,7 @@
 					$("#divInputId").removeClass("has-error")
 					
 					$("#signUpUserPwd").focus();
-					isCheckId = 1;
+					isCheckId = 1; // true
 				} else {
 					alert("이미 존재하는 아이디입니다.");
 					
@@ -29,11 +30,12 @@
 					
 					$("#signUpUserId").focus();
 				}
-			},
+			}, // success function end
 			error: function(req, status, errThrown) {
 				alert("아이디를 입력해주세요.");
 			}
-		});
+		}); // ajax end
+		
 	}
 	
 	function dosignUp() {

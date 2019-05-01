@@ -27,7 +27,7 @@
                                 	<button type="button" style="float: right;" class="btn btn-outline btn-warning">비밀번호 찾기</button>
                                 </div>
                                
-                                	<button class="btn btn-lg btn-success btn-block" >Login</button>
+                                	<button class="btn btn-md btn-success btn-block" >Login</button>
                                 
                             </fieldset>
                         </form>

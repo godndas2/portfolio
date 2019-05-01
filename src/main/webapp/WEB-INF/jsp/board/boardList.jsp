@@ -1,9 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>게시판</title>
 </head>
 <body>
@@ -16,7 +15,7 @@
             </div>
             <div class="row">
                   <div class="col-lg-12">
-                      <button type="button" class="btn btn-outline btn-primary pull-right">
+                      <button type="button" class="btn btn-outline btn-primary pull-right" onclick="location.href='/board/boardWrite'">
                           <i class="fa fa-edit fa-fw">글쓰기</i> 
                       </button>
                   </div>
@@ -40,7 +39,7 @@
                                 <td>${boardVO.nno}</td>
                                 <td>${boardVO.ntitle}</td>
                                 <td>${boardVO.nwriter}</td>
-                                <fmt:parseDate pattern="yyyyMMdd" value="${boardVO.nrdate}" scope="page" var="nrdate"/>
+                                <fmt:parseDate pattern="yyyy-MM-dd" value="${boardVO.nrdate}" scope="page" var="nrdate"/>
                                 <td><fmt:formatDate pattern="yyyy-MM-dd" value="${nrdate}"/></td>
                                 <td>${boardVO.nviewcnt}</td>
                             </tr>

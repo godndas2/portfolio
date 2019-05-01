@@ -1,7 +1,11 @@
 package com.halfdev.study.member.web;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -32,12 +36,17 @@ public class MemberController {
 	}
 	// 회원 로그인
 	@RequestMapping("memberJoinOk")
-	public String SubmitJoinOK(JoinOKVO joinOKVO) {
+	public String SubmitJoinOK(@ModelAttribute("joinOKVO")JoinOKVO joinOKVO,
+			HttpServletRequest request,
+            Model model) throws Exception {
+		JoinOKVO joinOKVO2 = new JoinOKVO();
+		
+//		joinOKVO2 = memberService.
 		return "redirect:/main";
 	}
 	// 회원가입
 	@RequestMapping("memberJoin")
-	public String SubmitJoin(JoinVO joinVO) {
+	public String SubmitJoin(JoinVO joinVO) throws Exception {
 		memberService.insertMember(joinVO);;
 		return "member/login"; 
 	}
@@ -48,6 +57,7 @@ public class MemberController {
 	public String dupliCheckId(@RequestBody String checkId) {
 		
 		String checkRst;
+		
 		int cnt = memberService.dupliCheckId(checkId);
 		if(cnt > 0) 
 			checkRst = "failed";

@@ -1,8 +1,10 @@
 package com.halfdev.study.member.service;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.halfdev.study.common.LoginUtil;
 import com.halfdev.study.member.dao.MemberDAO;
 import com.halfdev.study.member.vo.JoinOKVO;
 import com.halfdev.study.member.vo.JoinVO;
@@ -14,7 +16,9 @@ public class MemberServiceImpl implements MemberService {
 	private MemberDAO memberDAO;
 	
 	@Override
-	public void insertMember(JoinVO joinVO) {
+	public void insertMember(JoinVO joinVO) throws Exception {
+		String encode_pwd = LoginUtil.encryptPassword(joinVO.getSignUpUserId(),joinVO.getSignUpUserPwd());
+		joinVO.setSignUpUserId(encode_pwd);
 		memberDAO.insertMember(joinVO);
 	}
 
@@ -28,5 +32,6 @@ public class MemberServiceImpl implements MemberService {
 		int retVal = memberDAO.dupliCheckId(checkId); 
 		return retVal;
 	}
+	
 
 }
