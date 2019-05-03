@@ -15,7 +15,7 @@ public class MemberDAOImpl implements MemberDAO {
 	
 	@Override
 	public void insertMember(JoinVO joinVO) {
-		session.insert("member.insertMember", joinVO);
+		session.insert("insertMember", joinVO);
 	}
 
 	@Override
@@ -24,11 +24,12 @@ public class MemberDAOImpl implements MemberDAO {
 		return cnt;
 	}
 
-	@Override
-	public boolean loginCheck(JoinOKVO joinOKVO) {
-		String check = session.selectOne("loginCheck", joinOKVO);
-		return (check == null) ? false : true;
-	}
+//	@Override
+//	public JoinVO loginCheck(String id) {
+////		String check = session.selectOne("loginCheck", joinVO);
+////		return (check == null) ? false : true;
+//		return session.selectOne("loginCheck", id);
+//	}
 
 
 

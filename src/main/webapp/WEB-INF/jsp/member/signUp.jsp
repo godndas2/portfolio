@@ -148,7 +148,7 @@
                             	<div class="form-group">
                             		<input class="form-control" placeholder="상세주소" name="signUpUserCompanyAddressDetail" id="signUpUserCompanyAddressDetail" type="text"  />
                             	</div>
-                            	<input type="button" value="회원가입" onclick="dosignUp();" />
+                            	<input type="submit" value="회원가입" onclick="dosignUp();" />
                             </fieldset>
                         </form>
                     </div>

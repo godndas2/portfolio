@@ -3,7 +3,7 @@
 
 <mapper namespace="member"> 
   
-  <insert id="insertMember" parameterType="joinVO">
+  <insert id="insertMember" parameterType="com.halfdev.study.member.vo.JoinVO">
   		insert into cpmember (cpno, cpid, cppwd, cpname, cpemail, companyaddr1, companyaddr2, companyaddr3, cpcallnum, cprdate)
 		values (
 			SQ_CPNO.nextval,					<!-- pk자동증가 -->
@@ -23,4 +23,11 @@
 		select count(*) as existIdNum From cpmember 
 		where cpid = #{inputId}
 	</select>
+	
+<!-- 	<select id="loginCheck" resultType="com.halfdev.study.member.vo.JoinVO"> -->
+<!-- 		SELECT CPID, CPPWD -->
+<!-- 		FROM CPMEMBER  -->
+<!-- 		WHERE CPID = #{signUpUserId} -->
+<!-- 		AND CPPWD = #{signUpUserPwd} -->
+<!-- 	</select> -->
 </mapper>

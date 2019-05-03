@@ -1,6 +1,5 @@
 package com.halfdev.study.member.dao;
 
-import com.halfdev.study.member.vo.JoinOKVO;
 import com.halfdev.study.member.vo.JoinVO;
 
 public interface MemberDAO {
@@ -12,6 +11,6 @@ public interface MemberDAO {
 	public int dupliCheckId(String checkId);
 
 	// 로그인 체크 
-	public boolean loginCheck(JoinOKVO joinOKVO);
+//	public JoinVO loginCheck(JoinVO joinVO);
 	
 }

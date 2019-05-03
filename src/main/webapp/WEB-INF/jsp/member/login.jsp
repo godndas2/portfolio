@@ -26,6 +26,13 @@
                                 	<button type="button" class="btn btn-outline btn-info" style="float: right;" onclick="location.href='join'" >회원가입</button>
                                 	<button type="button" style="float: right;" class="btn btn-outline btn-warning">비밀번호 찾기</button>
                                 </div>
+                                <div class="col-xs-8">
+                                	<div class="form-group">
+                                		<label>
+                                			<input type="checkbox" name="useCookie"> 자동로그인
+                                		</label>
+                                	</div>
+                                </div>
                                
                                 	<button class="btn btn-md btn-success btn-block" >Login</button>
                                 

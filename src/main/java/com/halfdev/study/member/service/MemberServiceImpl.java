@@ -17,8 +17,8 @@ public class MemberServiceImpl implements MemberService {
 	
 	@Override
 	public void insertMember(JoinVO joinVO) throws Exception {
-		String encode_pwd = LoginUtil.encryptPassword(joinVO.getSignUpUserId(),joinVO.getSignUpUserPwd());
-		joinVO.setSignUpUserId(encode_pwd);
+//		String encode_pwd = LoginUtil.encryptPassword(joinVO.getSignUpUserId(),joinVO.getSignUpUserPwd());
+//		joinVO.setSignUpUserId(encode_pwd);
 		memberDAO.insertMember(joinVO);
 	}
 

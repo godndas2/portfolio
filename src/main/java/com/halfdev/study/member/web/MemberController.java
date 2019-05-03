@@ -47,8 +47,8 @@ public class MemberController {
 	// 회원가입
 	@RequestMapping("memberJoin")
 	public String SubmitJoin(JoinVO joinVO) throws Exception {
-		memberService.insertMember(joinVO);;
-		return "member/login"; 
+		memberService.insertMember(joinVO);
+		return "redirect:/main"; 
 	}
 	
 	// 중복확인
