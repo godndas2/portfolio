@@ -1,5 +1,6 @@
 package com.halfdev.study.member.dao;
 
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -23,7 +24,7 @@ public class MemberDAOImpl implements MemberDAO {
 		int cnt = session.selectOne("dupliCheckId", checkId.replace("=", ""));
 		return cnt;
 	}
-
+ 
 	@Override
 	public JoinVO loginCheck(String signUpUserId) throws Exception {
 		return session.selectOne("member.loginCheck", signUpUserId);

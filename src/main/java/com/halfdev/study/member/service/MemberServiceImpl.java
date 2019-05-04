@@ -66,5 +66,16 @@ public class MemberServiceImpl implements MemberService {
 		}
 	}
 	
+	//로그인 체크 
+	@Override
+	public String loginCheck(JoinVO joinVO, HttpSession session) {
+		String id = memberDAO.loginCheck(joinVO);
+		if(id !=null) {
+			session.setAttribute("cpid", joinVO.getSignUpUserId());
+			session.setAttribute("id", id);
+		}
+		return id;
+	}
+	 
 
 }
