@@ -24,4 +24,9 @@ public class BoardServiceImpl implements BoardService {
 		boardDao.boardInsert(boardVO);
 	}
 
+	@Override
+	public BoardVO boardRead(String nno) {
+		return boardDao.boardRead(nno);
+	}
+
 }

@@ -37,9 +37,11 @@
                         <c:forEach items="${list}" var="boardVO">
                             <tr>
                                 <td>${boardVO.nno}</td>
-                                <td>${boardVO.ntitle}</td>
+                                <td>
+                                <a href="/board/boardRead?nno=${boardVO.nno}">${boardVO.ntitle}</a>
+                                </td>
                                 <td>${boardVO.nwriter}</td>
-                                <fmt:parseDate pattern="yyyy-MM-dd" value="${boardVO.nrdate}" scope="page" var="nrdate"/>
+                                <fmt:parseDate pattern="yyyyMMdd" value="${boardVO.nrdate}" scope="page" var="nrdate"/>
                                 <td><fmt:formatDate pattern="yyyy-MM-dd" value="${nrdate}"/></td>
                                 <td>${boardVO.nviewcnt}</td>
                             </tr>

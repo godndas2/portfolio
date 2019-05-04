@@ -24,4 +24,9 @@ public class BoardDAOImpl implements BoardDAO {
 		session.insert("board.boardInsert", boardVO);
 	}
 
+	@Override
+	public BoardVO boardRead(String nno) {
+		return session.selectOne("board.boardRead", nno);
+	}
+
 }

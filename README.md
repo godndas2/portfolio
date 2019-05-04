@@ -1,7 +1,11 @@
 
 ## To do List
+
+###gazero
 - login 처리( 바로 로그인 됨 )
 - logout
+
+
 - 비밀번호찾기
 
 - 글쓰기(에디터)
