@@ -1,10 +1,8 @@
 package com.halfdev.study.member.vo;
 
-import java.util.Date;
 
 public class JoinVO {
 
-private String userid;
     
 private String signUpUserId;
 
@@ -24,13 +22,7 @@ private String signUpUserCompanyAddress;
 
 private String signUpUserCompanyAddressDetail;
 
-public String getUserid() {
-	return userid;
-}
 
-public void setUserid(String userid) {
-	this.userid = userid;
-}
 
 public String getSignUpUserId() {
 	return signUpUserId;
@@ -106,7 +98,7 @@ public void setSignUpUserCompanyAddressDetail(String signUpUserCompanyAddressDet
 
 @Override
 public String toString() {
-	return "JoinVO [userid=" + userid + ", signUpUserId=" + signUpUserId + ", signUpUserPwd=" + signUpUserPwd
+	return "JoinVO [signUpUserId=" + signUpUserId + ", signUpUserPwd=" + signUpUserPwd
 			+ ", signUpUserCompanyName=" + signUpUserCompanyName + ", signUpUserTelNo=" + signUpUserTelNo
 			+ ", signUpUserEmail=" + signUpUserEmail + ", signUpUserCompanyNo=" + signUpUserCompanyNo
 			+ ", signUpUserPostNo=" + signUpUserPostNo + ", signUpUserCompanyAddress=" + signUpUserCompanyAddress

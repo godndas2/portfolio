@@ -1,5 +1,7 @@
 package com.halfdev.study.member.dao;
 
+import javax.servlet.http.HttpSession;
+
 import com.halfdev.study.member.vo.JoinVO;
 
 public interface MemberDAO {
@@ -11,6 +13,6 @@ public interface MemberDAO {
 	public int dupliCheckId(String checkId);
 
 	// 로그인 체크 
-//	public JoinVO loginCheck(JoinVO joinVO);
+ 	public String loginCheck(JoinVO joinVO);
 	
 }

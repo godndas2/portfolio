@@ -1,6 +1,8 @@
 package com.halfdev.study.member.service;
 
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,6 +33,17 @@ public class MemberServiceImpl implements MemberService {
 	public int dupliCheckId(String checkId) {
 		int retVal = memberDAO.dupliCheckId(checkId); 
 		return retVal;
+	}
+	
+	//로그인 체크 
+	@Override
+	public String loginCheck(JoinVO joinVO, HttpSession session) {
+		String id = memberDAO.loginCheck(joinVO);
+		if(id !=null) {
+			session.setAttribute("cpid", joinVO.getSignUpUserId());
+			session.setAttribute("id", id);
+		}
+		return id;
 	}
 	
 

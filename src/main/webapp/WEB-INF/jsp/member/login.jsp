@@ -5,7 +5,6 @@
 
 <%@include file="../include/head.jsp" %>
 <body>
-
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
@@ -45,6 +44,13 @@
     </div>
 
  <%@include file="../include/plugin_js.jsp" %>
-</body>
 
+<script type="text/javascript">
+	$(document).ready(function(){
+		
+	});
+</script>
+
+
+</body>
 </html>

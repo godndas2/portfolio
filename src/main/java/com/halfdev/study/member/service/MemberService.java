@@ -2,6 +2,7 @@ package com.halfdev.study.member.service;
 
 
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.halfdev.study.member.vo.JoinOKVO;
 import com.halfdev.study.member.vo.JoinVO;
@@ -14,7 +15,6 @@ public interface MemberService {
     public void successJoin(JoinOKVO joinOKVO);
     // 중복확인
  	public int dupliCheckId(String checkId);
- // 로그인 체크 
-// 	public JoinVO loginCheck(JoinVO joinVO, HttpServletResponse response);
- 
+ 	// 로그인 체크 
+ 	public String loginCheck(JoinVO joinVO, HttpSession session);
 }

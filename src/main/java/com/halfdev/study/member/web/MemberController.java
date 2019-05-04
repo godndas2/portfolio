@@ -1,17 +1,16 @@
 package com.halfdev.study.member.web;
 
-import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.halfdev.study.member.service.MemberService;
-import com.halfdev.study.member.vo.JoinOKVO;
 import com.halfdev.study.member.vo.JoinVO;
 
 /**
@@ -34,14 +33,19 @@ public class MemberController {
 	public String joinPage() {
 		return "member/signUp";
 	}
-	// 회원 로그인
+	// 회원 로그인 체크 
 	@RequestMapping("memberJoinOk")
-	public String SubmitJoinOK(@ModelAttribute("joinOKVO")JoinOKVO joinOKVO,
-			HttpServletRequest request,
-            Model model) throws Exception {
-		JoinOKVO joinOKVO2 = new JoinOKVO();
-		
-//		joinOKVO2 = memberService.
+	public String loginCheck(@ModelAttribute JoinVO joinVO,
+			HttpSession session){
+			String cpid = memberService.loginCheck(joinVO, session);
+			ModelAndView mv = new ModelAndView();
+			
+			if(cpid != null) {
+				mv.setViewName("main");
+			}else {
+				mv.setViewName("member/login");
+				mv.addObject("message", "error");
+			}
 		return "redirect:/main";
 	}
 	// 회원가입
@@ -66,5 +70,4 @@ public class MemberController {
 		
 		return checkRst;
 	}
-	
 }

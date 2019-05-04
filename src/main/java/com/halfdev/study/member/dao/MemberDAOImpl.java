@@ -1,10 +1,10 @@
 package com.halfdev.study.member.dao;
 
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.halfdev.study.member.vo.JoinOKVO;
 import com.halfdev.study.member.vo.JoinVO;
 
 @Repository
@@ -24,12 +24,10 @@ public class MemberDAOImpl implements MemberDAO {
 		return cnt;
 	}
 
-//	@Override
-//	public JoinVO loginCheck(String id) {
-////		String check = session.selectOne("loginCheck", joinVO);
-////		return (check == null) ? false : true;
-//		return session.selectOne("loginCheck", id);
-//	}
+	@Override
+	public String loginCheck(JoinVO joinVO) {
+		return session.selectOne("loginCheck", joinVO);
+	}
 
 
 
