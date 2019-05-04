@@ -24,10 +24,9 @@
 		where cpid = #{inputId}
 	</select>
 	
-<!-- 	<select id="loginCheck" resultType="com.halfdev.study.member.vo.JoinVO"> -->
-<!-- 		SELECT CPID, CPPWD -->
-<!-- 		FROM CPMEMBER  -->
-<!-- 		WHERE CPID = #{signUpUserId} -->
-<!-- 		AND CPPWD = #{signUpUserPwd} -->
-<!-- 	</select> -->
+	<select id="loginCheck" resultType="com.halfdev.study.member.vo.JoinVO" parameterType="String">
+		SELECT *
+		FROM CPMEMBER 
+		WHERE CPID = #{signUpUserId}
+	</select>
 </mapper>

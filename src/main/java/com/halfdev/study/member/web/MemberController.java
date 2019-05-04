@@ -1,17 +1,17 @@
 package com.halfdev.study.member.web;
 
-import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.halfdev.study.member.service.MemberService;
-import com.halfdev.study.member.vo.JoinOKVO;
 import com.halfdev.study.member.vo.JoinVO;
 
 /**
@@ -24,26 +24,33 @@ public class MemberController {
 	@Autowired
 	private MemberService memberService;
 	
-	// 로그인 페이지로 이동
-	@RequestMapping("login")
-	public String loginPage() {
-		return "member/login";
-	}
 	// 회원가입 페이지로 이동
 	@RequestMapping("join")
 	public String joinPage() {
 		return "member/signUp";
 	}
-	// 회원 로그인
-	@RequestMapping("memberJoinOk")
-	public String SubmitJoinOK(@ModelAttribute("joinOKVO")JoinOKVO joinOKVO,
-			HttpServletRequest request,
-            Model model) throws Exception {
-		JoinOKVO joinOKVO2 = new JoinOKVO();
-		
-//		joinOKVO2 = memberService.
-		return "redirect:/main";
+
+	// 로그인 페이지로 이동
+	@RequestMapping(value = "login", method = RequestMethod.GET)
+	public String loginPage() throws Exception {
+		return "member/login";
 	}
+	
+	// 로그인 처리하는 부분
+    @RequestMapping(value="/loginSuccess",method=RequestMethod.POST)
+    public String loginCheck(@ModelAttribute JoinVO joinVO, HttpSession session, HttpServletResponse response) throws Exception{
+    	joinVO = memberService.loginCheck(joinVO, response);
+    	session.setAttribute("joinVO", joinVO);
+    	return "redirect:/main";
+    }
+    
+    // 로그아웃 하는 부분
+    @RequestMapping(value="/logout.do")
+    public String logout(HttpSession session) {
+        session.invalidate(); // 세션 초기화
+        return "redirect:/login"; // 로그아웃 후 로그인화면으로 이동
+    }
+    
 	// 회원가입
 	@RequestMapping("memberJoin")
 	public String SubmitJoin(JoinVO joinVO) throws Exception {

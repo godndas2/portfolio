@@ -1,6 +1,7 @@
 package com.halfdev.study.member.service;
 
 
+
 import javax.servlet.http.HttpServletResponse;
 
 import com.halfdev.study.member.vo.JoinOKVO;
@@ -11,10 +12,10 @@ public interface MemberService {
 	// 회원가입
 	public void insertMember(JoinVO joinVO) throws Exception;
 	// 회원 로그인
-    public void successJoin(JoinOKVO joinOKVO);
+//    public void successJoin(JoinOKVO joinOKVO);
     // 중복확인
  	public int dupliCheckId(String checkId);
- // 로그인 체크 
-// 	public JoinVO loginCheck(JoinVO joinVO, HttpServletResponse response);
+ 	// 로그인 체크 
+ 	public JoinVO loginCheck(JoinVO joinVO, HttpServletResponse response) throws Exception;
  
 }

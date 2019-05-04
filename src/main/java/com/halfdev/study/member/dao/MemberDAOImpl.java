@@ -24,12 +24,10 @@ public class MemberDAOImpl implements MemberDAO {
 		return cnt;
 	}
 
-//	@Override
-//	public JoinVO loginCheck(String id) {
-////		String check = session.selectOne("loginCheck", joinVO);
-////		return (check == null) ? false : true;
-//		return session.selectOne("loginCheck", id);
-//	}
+	@Override
+	public JoinVO loginCheck(String signUpUserId) throws Exception {
+		return session.selectOne("member.loginCheck", signUpUserId);
+	}
 
 
 
