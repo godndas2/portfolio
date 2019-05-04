@@ -16,6 +16,6 @@ public interface MemberService {
     // 중복확인
  	public int dupliCheckId(String checkId);
  	// 로그인 체크 
- 	public JoinVO loginCheck(JoinVO joinVO, HttpServletResponse response) throws Exception;
- 
-}
+ 	public String loginCheck(JoinVO joinVO, HttpSession session);
+} 
+
