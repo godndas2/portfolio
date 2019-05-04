@@ -14,7 +14,7 @@
 			#{signUpUserCompanyAddress},		<!-- 회원 도로명주소 -->
 			#{signUpUserCompanyAddressDetail},	<!-- 회원 상세주소 -->
 			#{signUpUserTelNo}					<!-- 회원 회사전화번호 -->
-		)
+		) 
     </insert>
   
   	<select id="dupliCheckId" parameterType="String" resultType="integer">

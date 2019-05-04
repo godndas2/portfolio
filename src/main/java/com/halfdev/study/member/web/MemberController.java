@@ -47,7 +47,7 @@ public class MemberController {
 				mv.addObject("message", "error");
 			}
 		return "redirect:/main";
-	}
+	} 
 	// 회원가입
 	@RequestMapping("memberJoin")
 	public String SubmitJoin(JoinVO joinVO) throws Exception {

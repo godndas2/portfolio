@@ -11,7 +11,7 @@ public interface MemberDAO {
 
 	// 중복확인
 	public int dupliCheckId(String checkId);
-
+ 
 	// 로그인 체크 
  	public String loginCheck(JoinVO joinVO);
 	

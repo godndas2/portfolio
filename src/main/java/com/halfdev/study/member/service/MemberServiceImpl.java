@@ -45,6 +45,6 @@ public class MemberServiceImpl implements MemberService {
 		}
 		return id;
 	}
-	
+	 
 
 }

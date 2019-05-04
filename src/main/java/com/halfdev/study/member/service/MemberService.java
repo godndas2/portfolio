@@ -17,4 +17,4 @@ public interface MemberService {
  	public int dupliCheckId(String checkId);
  	// 로그인 체크 
  	public String loginCheck(JoinVO joinVO, HttpSession session);
-}
+} 

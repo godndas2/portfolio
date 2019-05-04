@@ -95,7 +95,7 @@ public String getSignUpUserCompanyAddressDetail() {
 public void setSignUpUserCompanyAddressDetail(String signUpUserCompanyAddressDetail) {
 	this.signUpUserCompanyAddressDetail = signUpUserCompanyAddressDetail;
 }
-
+ 
 @Override
 public String toString() {
 	return "JoinVO [signUpUserId=" + signUpUserId + ", signUpUserPwd=" + signUpUserPwd

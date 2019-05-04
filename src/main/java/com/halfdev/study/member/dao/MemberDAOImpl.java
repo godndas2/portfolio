@@ -23,7 +23,7 @@ public class MemberDAOImpl implements MemberDAO {
 		int cnt = session.selectOne("dupliCheckId", checkId.replace("=", ""));
 		return cnt;
 	}
-
+ 
 	@Override
 	public String loginCheck(JoinVO joinVO) {
 		return session.selectOne("loginCheck", joinVO);
