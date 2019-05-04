@@ -8,7 +8,8 @@ public interface BoardDAO {
 
 	// 게시글 목록
 	public List<BoardVO> boardList(BoardVO boardVO);
-	
 	// 게시글 저장
 	public void boardInsert(BoardVO boardVO);
+	// 게시글 상세
+	public BoardVO boardRead(String nno);
 }

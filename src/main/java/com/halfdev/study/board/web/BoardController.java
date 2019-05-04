@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.halfdev.study.board.service.BoardService;
 import com.halfdev.study.board.vo.BoardVO;
@@ -31,14 +32,20 @@ public class BoardController {
 		return "board/boardList";
 	}
 	
-	   @RequestMapping(value="/boardWrite", method=RequestMethod.GET)
-	    public String boardWrite() {
-	        return "board/boardInsert";
-	    }
-	    
-	    @RequestMapping(value="/boardInsert", method=RequestMethod.POST)
-	     public String boardInsert(BoardVO boardVO) {
-	        boardService.boardInsert(boardVO);
-	        return "redirect:boardList";
-	    }
+   @RequestMapping(value="/boardWrite", method=RequestMethod.GET)
+    public String boardWrite() {
+        return "board/boardInsert";
+    }
+    
+    @RequestMapping(value="/boardInsert", method=RequestMethod.POST)
+     public String boardInsert(BoardVO boardVO) {
+        boardService.boardInsert(boardVO);
+        return "redirect:/boardList";
+    }
+    
+    @RequestMapping("/boardRead")
+    public String boardRead(Model model, @RequestParam String nno) {
+    	model.addAttribute("read", boardService.boardRead(nno));
+    	return "board/boardRead";
+    }
 }

@@ -22,6 +22,14 @@
 		where cpid = #{inputId}
 	</select>
 	
+<<<<<<< HEAD
+	<select id="loginCheck" resultType="com.halfdev.study.member.vo.JoinVO" parameterType="String">
+		SELECT *
+		FROM CPMEMBER 
+		WHERE CPID = #{signUpUserId}
+	</select>
+</mapper>
+=======
 	<select id="loginCheck" resultType="String">
 		SELECT cpname
 		FROM cpmember
@@ -30,3 +38,4 @@
 	</select>
 	
 </mapper>
+>>>>>>> branch 'master' of https://github.com/godndas2/portfolio.git

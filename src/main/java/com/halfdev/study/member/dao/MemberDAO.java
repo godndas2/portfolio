@@ -13,6 +13,6 @@ public interface MemberDAO {
 	public int dupliCheckId(String checkId);
  
 	// 로그인 체크 
- 	public String loginCheck(JoinVO joinVO);
+	public JoinVO loginCheck(String signUpUserId) throws Exception;
 	
 }

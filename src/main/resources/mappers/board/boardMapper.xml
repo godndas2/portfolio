@@ -4,15 +4,15 @@
 <mapper namespace="board">
 	
 	<select id="boardList" resultType="com.halfdev.study.board.vo.BoardVO">
-            SELECT
-                 nno,
-                 ntitle,
-                 ncontent,
-                 nwriter,
-                 nrdate,
-                 nviewcnt,
-                 nisdelete
-             FROM tbl_notice
+	            SELECT
+	                 nno,
+	                 ntitle,
+	                 ncontent,
+	                 nwriter,
+	                 nrdate,
+	                 nviewcnt,
+	                 nisdelete
+	             FROM tbl_notice
     </select>
     
     <insert id="boardInsert">
@@ -30,4 +30,17 @@
                 sysdate
             )
 	</insert>
+	
+	<select id="boardRead" resultType="com.halfdev.study.board.vo.BoardVO">
+			SELECT
+                 nno,
+                 ntitle,
+                 ncontent,
+                 nwriter,
+                 nrdate,
+                 nviewcnt,
+                 nisdelete
+             FROM tbl_notice
+             WHERE nno = #{nno}
+	</select>
 </mapper>
